@@ -3,3 +3,14 @@
     margin: 0 auto;
 }
 
+.resetbutton{
+    background-color: #081119;
+    color: #7ebab5;
+    border: 2px solid #7ebab5;
+    border-radius: 3px; /* Green */
+}
+
+.resetbutton:hover{
+    background-color: #7ebab5;
+    color: #081119;
+}

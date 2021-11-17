@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled'
 
-const DisplayWord = (props) => {
+const DisplayWord = ({word, nextword}) => {
     const Textbox = styled.div`
         background: #16212a;
         width: 1300px;
@@ -24,11 +24,19 @@ const DisplayWord = (props) => {
         font-family: 'Raleway', sans-serif;
         text-align: center;
         font-size: 8.5rem;`
+    
+    const NextWord = styled.h1`
+        color: #0c171f;
+        font-family: 'Raleway', sans-serif;
+        text-align: center;
+        font-size: 5rem;`
+
 
 
     return (
         <Textbox>
-            <Currentword>Bausenclown</Currentword>
+            <Currentword>{word}</Currentword>
+            <NextWord>{nextword}</NextWord>
         </Textbox>
     );
 }
