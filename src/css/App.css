@@ -1,32 +1,34 @@
-@import url('https://fonts.googleapis.com/css2?family=Cabin&family=Raleway:wght@900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Cabin&family=Raleway:wght@900&family=Space+Mono&display=swap");
 
 body {
-    margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-      sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background: #081119;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-.App{
-    margin: 0 auto;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-.resetbutton{
-    background-color: #081119;
-    color: #7ebab5;
-    border: 2px solid #7ebab5;
-    border-radius: 3px; /* Green */
-    font-family: 'Cabin', sans-serif;
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.App {
+  margin: 0 auto;
 }
 
-.resetbutton:hover{
-    background-color: #7ebab5;
-    color: #081119;
+.Settingsbutton {
+  background-color: transparent;
+  color: transparent;
+  border: 0px;
+  position: absolute;
+  top: 2%;
+  left: 95%;
+  opacity: 0.2;
+  transition: opacity 0.2s linear, transform 0.4s ease;
+}
+
+.Settingsbutton:hover {
+  opacity: 0.8;
+  transform: scale(110%);
 }

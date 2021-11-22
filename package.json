@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@emotion/css": "^11.5.0",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
     "@testing-library/jest-dom": "^5.15.0",
@@ -18,12 +19,6 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
