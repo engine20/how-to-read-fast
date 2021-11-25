@@ -27,6 +27,8 @@ class Settingspage extends React.Component {
       font-family: "Cabin", sans-serif;
       border-radius: 3px;
       border-color: ${GetSetting("theme").get("texttertiary")};
+      border-style: double;
+      border-width: 1px;
       width: 1000px;
       font-size: 1.5rem;
       position: absolute;
@@ -34,9 +36,6 @@ class Settingspage extends React.Component {
       margin-top: 3%;
     `;
 
-    const Button = styled.input`
-      background: rgba(241, 245, 248, 0);
-    `;
     return (
       <Settingsmenu>
         <legend>SETTINGS</legend>

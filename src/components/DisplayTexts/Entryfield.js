@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { css, cx } from "@emotion/css";
 import { SetSetting, GetSetting } from "../Settings";
 
@@ -7,10 +7,11 @@ class Entryfield extends React.Component {
     super(props);
     this.state = {
       input: "",
-      hidetooltip: true,
+      hidelable: true,
     };
     this.SetInput = this.SetInput.bind(this);
     this.Tooltip = this.Tooltip.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   SetInput(i) {
@@ -24,13 +25,39 @@ class Entryfield extends React.Component {
       hidden = false;
     }
     this.setState(() => ({
-      hidetooltip: hidden,
+      hidelable: hidden,
     }));
+  }
+
+  handleSubmit(event) {
+    if (this.state.input !== "") {
+      event.preventDefault();
+      this.props.SetText(this.state.input);
+    }
+  }
+
+  componentDidMount() {
+    //restore text after mounting
+    if (GetSetting("text") !== "") {
+      this.props.SetText(GetSetting("text")); //If text was set before unmounting set it again
+    } else {
+      this.setState(() => ({
+        input: GetSetting("Entryfield").get("input"), //If text was in the entryfield but not set
+        hidelable: GetSetting("Entryfield").get("hidelable"),
+      }));
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.state.input !== "") {
+      GetSetting("Entryfield").set("input", this.state.input);
+      GetSetting("Entryfield").set("hidelable", this.state.hidelable);
+    }
   }
 
   render() {
     return (
-      <div
+      <form
         className={css`
           position: relative;
           padding: 15px 0 0;
@@ -38,6 +65,7 @@ class Entryfield extends React.Component {
           margin-left: 10%;
           width: 50%;
         `}
+        onSubmit={this.handleSubmit}
       >
         <input
           type="input"
@@ -70,9 +98,9 @@ class Entryfield extends React.Component {
             }
             ::placeholder {
               color: ${GetSetting("theme").get("texttertiary")};
-              visibility: ${!this.state.hidetooltip ? "hidden" : "visible"};
+              visibility: ${!this.state.hidelable ? "hidden" : "visible"};
               transition: visibility 0.22s
-                ${!this.state.hidetooltip ? "step-start" : "step-end"};
+                ${!this.state.hidelable ? "step-start" : "step-end"};
             }
 
             &:required,
@@ -87,11 +115,11 @@ class Entryfield extends React.Component {
             }
           `}
         />
-        <lable
+        <label
           id="Inputlable"
           htmlFor="text"
           className={css`
-            visibility: ${this.state.hidetooltip ? "hidden" : "visible"};
+            visibility: ${this.state.hidelable ? "hidden" : "visible"};
             user-select: none;
             font-family: "Cabin", sans-serif;
             position: absolute;
@@ -104,8 +132,30 @@ class Entryfield extends React.Component {
           `}
         >
           Enter your text here
-        </lable>
-      </div>
+        </label>
+        <input
+          type="button"
+          value="GO"
+          onMouseDown={this.handleSubmit}
+          className={css`
+            font-family: "Cabin", sans-serif;
+            color: ${GetSetting("theme").get("texttertiary")};
+            font-size: 1.7rem;
+            border-color: ${GetSetting("theme").get("texttertiary")};
+            border-radius: 5px;
+            border-style: double;
+            background-color: transparent;
+            margin-left: 20px;
+            height: 55px;
+            width: 70px;
+            transition: 0.22s ease;
+            &:hover {
+              color: ${GetSetting("theme").get("textprimary")};
+              border-color: ${GetSetting("theme").get("textprimary")};
+            }
+          `}
+        />
+      </form>
     );
   }
 }

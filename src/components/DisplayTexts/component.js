@@ -4,10 +4,13 @@ import StaticElements from "./StaticElements";
 import { SetSetting, GetSetting } from "../Settings";
 import Entryfield from "./Entryfield";
 //import {example} from '../util'
-
+//TODO convert to class
+//save index on unmout
+//define state functions without useState
 const DisplayText = ({ wpm }) => {
   //Process the text to an array
-  let words = (GetSetting("text") || "").split(" ");
+  const [text, setText] = useState("");
+  let words = (text || "").split(" ");
   words = words.filter((item) => item !== ""); //avoid empty elements
 
   const delay = 60 / wpm;
@@ -38,6 +41,7 @@ const DisplayText = ({ wpm }) => {
       if (e.keyCode === 17) {
         setIndex(Math.max(index - 1, 0));
       }
+      SetSetting("index", index);
     }
   };
 
@@ -71,6 +75,12 @@ const DisplayText = ({ wpm }) => {
     return (Math.floor((index / (words.length - 1)) * 100) || 0) + "%";
   };
 
+  const SetTexthandler = (Text) => {
+    setText(Text);
+    SetSetting("text", Text);
+    setIndex(GetSetting("index") + 0);
+  };
+
   return (
     <div
       className="textbox"
@@ -80,14 +90,14 @@ const DisplayText = ({ wpm }) => {
       onFocus={onFocus}
       onBlur={onBlur}
     >
-      {GetSetting("text") ? (
+      {text !== "" ? (
         <DisplayWord
           word={(focus && words[index]) || "Click to focus"}
           nextword={nextwordhint()}
           progress={progress()}
         />
       ) : (
-        <Entryfield />
+        <Entryfield SetText={SetTexthandler} />
       )}
       <StaticElements />
     </div>

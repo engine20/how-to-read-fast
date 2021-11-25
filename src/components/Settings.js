@@ -1,5 +1,13 @@
 const settings = new Map([
-  //["text", "Lorem Ipsum"],
+  ["text", ""],
+  ["index", 0],
+  [
+    "Entryfield",
+    new Map([
+      ["input", ""],
+      ["hidelable", true],
+    ]),
+  ],
   [
     "theme",
     new Map([
