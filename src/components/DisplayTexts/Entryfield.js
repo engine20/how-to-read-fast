@@ -38,14 +38,10 @@ class Entryfield extends React.Component {
 
   componentDidMount() {
     //restore text after mounting
-    if (GetSetting("text") !== "") {
-      this.props.SetText(GetSetting("text")); //If text was set before unmounting set it again
-    } else {
-      this.setState(() => ({
-        input: GetSetting("Entryfield").get("input"), //If text was in the entryfield but not set
-        hidelable: GetSetting("Entryfield").get("hidelable"),
-      }));
-    }
+    this.setState({
+      input: GetSetting("Entryfield").get("input"), //If text was in the entryfield but not set
+      hidelable: GetSetting("Entryfield").get("hidelable"),
+    });
   }
 
   componentWillUnmount() {
