@@ -24,6 +24,7 @@ class DisplayText extends React.Component {
     this.progressfocused = this.progressfocused.bind(this);
     this.handleprogresskeyevent = this.handleprogresskeyevent.bind(this);
     this.progressblurred = this.progressblurred.bind(this);
+    this.setIndexbyPercent = this.setIndexbyPercent.bind(this);
   }
 
   setIndex(i) {
@@ -89,7 +90,7 @@ class DisplayText extends React.Component {
   handleprogresskeyevent(e) {
     if (
       (e.keyCode > 47 && e.keyCode < 58) ||
-      (e.keyCode > 96 && e.keyCode < 105)
+      (e.keyCode > 95 && e.keyCode < 106)
     ) {
       if (this.overwriteprogress.length < 3) {
         //3 because of the space in the beginning of the string
