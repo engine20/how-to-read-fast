@@ -15,7 +15,7 @@ With [how to read fast](http://example.com) you can read documents, books, paper
 
 ## How to build
 
-This project was made with<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" style="width:2.1rem;position: relative; top:0.358rem">[ReactJS](https://reactjs.org/) using <img src="https://raw.githubusercontent.com/emotion-js/emotion/main/emotion.png" style="width:1.3rem ;position: relative; top:0.23rem"> [Emotion](https://emotion.sh/docs/introduction).
+This project was made with<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png"  width="20">[ReactJS](https://reactjs.org/) using <img src="https://raw.githubusercontent.com/emotion-js/emotion/main/emotion.png" width="15> [Emotion](https://emotion.sh/docs/introduction).
 <br><br>
 To get started download the code and execute
 
