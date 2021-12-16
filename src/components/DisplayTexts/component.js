@@ -1,11 +1,10 @@
 import React from "react";
-// import DisplayWord from "./DisplayWord";
 import StaticElements from "./StaticElements";
 import { SetSetting, GetSetting } from "../Settings";
 import Entryfield from "./Entryfield";
 import styled from "@emotion/styled";
 import { css, cx } from "@emotion/css";
-import { nearest } from "../util";
+import Focusprompt from "./Focusprompt";
 
 class DisplayText extends React.Component {
   constructor(props) {
@@ -133,9 +132,6 @@ class DisplayText extends React.Component {
       font-family: "Raleway", sans-serif;
       text-align: center;
       font-size: 5rem;
-
-      position: relative;
-      margin-top: 1.8em;
     `;
 
     const Progress = styled.h1`
@@ -143,8 +139,6 @@ class DisplayText extends React.Component {
       font-family: "Raleway", sans-serif;
       text-align: right;
       font-size: 5rem;
-      margin-top: -140px;
-      padding-right: 20px;
       border-style: solid;
       border-width: 3px;
       border-color: ${this.state.editprogress
@@ -152,12 +146,9 @@ class DisplayText extends React.Component {
         : "transparent"};
       border-radius: 10px;
       width: 180px;
-      position: relative;
-      left: 88%;
       transition: 0.2s;
     `;
     const { wpm } = this.props;
-    //Process the text to an array
 
     const delay = 60 / wpm;
 
@@ -223,23 +214,24 @@ class DisplayText extends React.Component {
     };
 
     return (
-      <div>
+      <span>
         {this.state.text !== "" ? (
           <div
             className={css`
               background: ${GetSetting("theme").get("textbox")};
-              width: 1500px;
-              height: 350px;
-              display: flex;
-              flex-direction: column;
+              width: 93.75rem;
+              height: 21.875rem;
               border-radius: 5px;
-              margin: auto;
               position: absolute;
               top: 50%;
               left: 50%;
-              -ms-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
               outline: none;
+              display: grid;
+              grid-template-columns: 1fr 3fr 1fr;
+              align-items: center;
+              justify-items: center;
+              grid-template-rows: 21.875rem 10rem;
             `}
           >
             <div
@@ -249,15 +241,18 @@ class DisplayText extends React.Component {
               onFocus={onFocus}
               onBlur={onBlur}
               className={css`
+                grid-column-start: 1;
+                grid-column-end: 4;
                 outline: none;
               `}
             >
-              <Currentword>
-                {(this.state.focus && this.words[this.state.index]) ||
-                  "Click to focus"}
-              </Currentword>
-              <NextWord>{nextwordhint()}</NextWord>
+              <Currentword>{this.words[this.state.index]}</Currentword>
+              {/* <Focusprompt focused={this.state.focus} /> */}
             </div>
+            <div>
+              <StaticElements />
+            </div>
+            <NextWord>{nextwordhint()}</NextWord>
             <div
               onFocus={this.progressfocused}
               onBlur={this.progressblurred}
@@ -273,8 +268,7 @@ class DisplayText extends React.Component {
         ) : (
           <Entryfield SetText={SetTexthandler} />
         )}
-        <StaticElements />
-      </div>
+      </span>
     );
   }
 }

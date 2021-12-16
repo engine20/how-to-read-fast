@@ -1,13 +1,7 @@
 const settings = new Map([
   ["text", ""],
   ["index", 0],
-  [
-    "Entryfield",
-    new Map([
-      ["input", ""],
-      ["hidelable", true],
-    ]),
-  ],
+  ["Entryfield", new Map([["input", ""]])],
   [
     "theme",
     new Map([
@@ -22,7 +16,6 @@ const settings = new Map([
 
 export const SetSetting = (Setting, Value) => {
   settings.set(Setting, Value);
-  //console.log("Setting Change: " + Setting + ", " + Value);
 };
 export const GetSetting = (Setting) => {
   return settings.get(Setting);

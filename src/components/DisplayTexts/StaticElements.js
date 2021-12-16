@@ -10,15 +10,9 @@ const StaticElements = () => {
     display: flex;
     flex-direction: column;
     border-radius: 10px;
-    margin: auto;
-    position: absolute;
-    top: 80%;
-    left: 17%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
     border: 2px solid #213138;
-    padding-left: 15px;
-    padding-top: 5px;
+    margin-top: 3rem;
+    padding: 0.2rem 1rem 0.7rem 1rem;
   `;
 
   const Text = styled.h1`

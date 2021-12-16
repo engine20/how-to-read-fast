@@ -8,7 +8,6 @@ class Entryfield extends React.Component {
     super(props);
     this.state = {
       input: "",
-      hidelable: true,
     };
     this.SetInput = this.SetInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -31,7 +30,6 @@ class Entryfield extends React.Component {
     //restore text after mounting
     this.setState({
       input: GetSetting("Entryfield").get("input"), //If text was in the entryfield but not set
-      hidelable: GetSetting("Entryfield").get("hidelable"),
     });
   }
 
