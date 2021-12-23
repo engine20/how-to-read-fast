@@ -11,7 +11,8 @@ const StaticElements = () => {
     flex-direction: column;
     border-radius: 10px;
     border: 2px solid #213138;
-    margin-top: 3rem;
+    margin-top: 4rem;
+    margin-left: -5rem;
     padding: 0.2rem 1rem 0.7rem 1rem;
   `;
 

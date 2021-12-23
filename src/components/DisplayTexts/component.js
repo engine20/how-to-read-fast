@@ -219,7 +219,7 @@ class DisplayText extends React.Component {
           <div
             className={css`
               background: ${GetSetting("theme").get("textbox")};
-              width: 93.75rem;
+              width: min(93.75rem, 93%);
               height: 21.875rem;
               border-radius: 5px;
               position: absolute;
@@ -244,6 +244,7 @@ class DisplayText extends React.Component {
                 grid-column-start: 1;
                 grid-column-end: 4;
                 outline: none;
+                width: 100%;
               `}
             >
               <Currentword>{this.words[this.state.index]}</Currentword>
