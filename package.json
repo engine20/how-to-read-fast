@@ -1,20 +1,19 @@
 {
   "name": "react-test-app",
   "version": "0.1.0",
+  "homepage": "https://engine20.github.io/how-to-read-fast",
   "private": true,
   "dependencies": {
     "@emotion/css": "^11.5.0",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",
-    "@testing-library/jest-dom": "^5.15.0",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.1.2"
+    "react-scripts": "4.0.3"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -31,5 +30,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
