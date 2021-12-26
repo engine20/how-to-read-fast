@@ -18,6 +18,7 @@ class Settingspage extends React.Component {
       checked: !state.checked,
     }));
     SetSetting("checked", !this.state.checked);
+    this.props.changeTheme(!this.state.checked);
   }
 
   render() {
@@ -27,7 +28,7 @@ class Settingspage extends React.Component {
       font-family: "Cabin", sans-serif;
       border-radius: 3px;
       border-color: ${GetSetting("theme").get("texttertiary")};
-      border-style: double;
+      border-style: solid;
       border-width: 1px;
       width: 1000px;
       font-size: 1.5rem;
@@ -40,7 +41,7 @@ class Settingspage extends React.Component {
       <Settingsmenu>
         <legend>SETTINGS</legend>
         <label className="b-contain">
-          <span>First checkbox</span>
+          <span>Light Theme</span>
           <input
             type="checkbox"
             checked={checked}

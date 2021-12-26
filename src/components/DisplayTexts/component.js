@@ -38,6 +38,23 @@ class DisplayText extends React.Component {
     });
     this.words = (t || "").split(" ");
     this.words = this.words.filter((item) => item !== ""); //avoid empty elements
+    let maxlength = 16; //TODO add user control
+    this.words = this.words.flatMap((element) => {
+      //splitting too long elements
+      if (!(element.length > maxlength)) {
+        return element;
+      } else {
+        let temp = [];
+        for (let i = 0; i < Math.ceil(element.length / maxlength); i++) {
+          //iterate through the word how many times we want to split it
+          if (temp.length !== 0) {
+            temp[i - 1] = temp[i - 1] + "-"; //add a dash to all entries except for the last one
+          }
+          temp = temp.concat(element.substr(i * maxlength, maxlength).split()); //add the string to the array
+        }
+        return temp;
+      }
+    }, this);
   }
 
   setFocused(f) {
@@ -59,8 +76,7 @@ class DisplayText extends React.Component {
       index: GetSetting("index"),
       text: GetSetting("text"),
     });
-    this.words = (GetSetting("text") || "").split(" ");
-    this.words = this.words.filter((item) => item !== ""); //avoid empty elements
+    this.setText(GetSetting("text"));
   }
 
   componentWillUnmount() {
