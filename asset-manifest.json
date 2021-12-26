@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/how-to-read-fast/static/css/main.2faa7f3e.chunk.css",
-    "main.js": "/how-to-read-fast/static/js/main.ec173de9.chunk.js",
-    "main.js.map": "/how-to-read-fast/static/js/main.ec173de9.chunk.js.map",
-    "runtime-main.js": "/how-to-read-fast/static/js/runtime-main.ab68d1dc.js",
-    "runtime-main.js.map": "/how-to-read-fast/static/js/runtime-main.ab68d1dc.js.map",
-    "static/js/2.c791b2ed.chunk.js": "/how-to-read-fast/static/js/2.c791b2ed.chunk.js",
-    "static/js/2.c791b2ed.chunk.js.map": "/how-to-read-fast/static/js/2.c791b2ed.chunk.js.map",
+    "main.css": "/how-to-read-fast/static/css/main.30b128af.chunk.css",
+    "main.js": "/how-to-read-fast/static/js/main.78ea4d40.chunk.js",
+    "main.js.map": "/how-to-read-fast/static/js/main.78ea4d40.chunk.js.map",
+    "runtime-main.js": "/how-to-read-fast/static/js/runtime-main.d8ca0a91.js",
+    "runtime-main.js.map": "/how-to-read-fast/static/js/runtime-main.d8ca0a91.js.map",
+    "static/js/2.81ad82e9.chunk.js": "/how-to-read-fast/static/js/2.81ad82e9.chunk.js",
+    "static/js/2.81ad82e9.chunk.js.map": "/how-to-read-fast/static/js/2.81ad82e9.chunk.js.map",
     "static/css/3.110702a5.chunk.css": "/how-to-read-fast/static/css/3.110702a5.chunk.css",
-    "static/js/3.90625e97.chunk.js": "/how-to-read-fast/static/js/3.90625e97.chunk.js",
-    "static/js/3.90625e97.chunk.js.map": "/how-to-read-fast/static/js/3.90625e97.chunk.js.map",
+    "static/js/3.e91b95c6.chunk.js": "/how-to-read-fast/static/js/3.e91b95c6.chunk.js",
+    "static/js/3.e91b95c6.chunk.js.map": "/how-to-read-fast/static/js/3.e91b95c6.chunk.js.map",
     "index.html": "/how-to-read-fast/index.html",
     "static/css/3.110702a5.chunk.css.map": "/how-to-read-fast/static/css/3.110702a5.chunk.css.map",
-    "static/css/main.2faa7f3e.chunk.css.map": "/how-to-read-fast/static/css/main.2faa7f3e.chunk.css.map",
-    "static/js/2.c791b2ed.chunk.js.LICENSE.txt": "/how-to-read-fast/static/js/2.c791b2ed.chunk.js.LICENSE.txt",
+    "static/css/main.30b128af.chunk.css.map": "/how-to-read-fast/static/css/main.30b128af.chunk.css.map",
+    "static/js/2.81ad82e9.chunk.js.LICENSE.txt": "/how-to-read-fast/static/js/2.81ad82e9.chunk.js.LICENSE.txt",
     "static/media/Settings.8f63e7d6.png": "/how-to-read-fast/static/media/Settings.8f63e7d6.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.ab68d1dc.js",
-    "static/js/2.c791b2ed.chunk.js",
-    "static/css/main.2faa7f3e.chunk.css",
-    "static/js/main.ec173de9.chunk.js"
+    "static/js/runtime-main.d8ca0a91.js",
+    "static/js/2.81ad82e9.chunk.js",
+    "static/css/main.30b128af.chunk.css",
+    "static/js/main.78ea4d40.chunk.js"
   ]
 }
